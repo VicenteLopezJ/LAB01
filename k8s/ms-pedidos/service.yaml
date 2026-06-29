@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-pedidos-svc
+  namespace: microservicios
+  labels:
+    app: ms-pedidos
+spec:
+  selector:
+    app: ms-pedidos
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8082
+      targetPort: 8082
+  type: ClusterIP
